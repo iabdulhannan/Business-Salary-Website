@@ -7,8 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="Business-Salary-Website-Files/userDashBoard.css" rel="stylesheet" type="text/css">
     <!--    <script src="js/script.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>-->
+<script src="js/chart.min.js"></script>
     <style>
 
         .header-content {
@@ -51,6 +51,17 @@
             /*margin-left: 208px;*/
 
         }
+
+        canvas {
+
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-bottom: 10%;
+            width: 50%;
+
+            position: relative;
+        }
+
     </style>
 
 </head>
@@ -182,8 +193,10 @@
 
     </div>
 </section>
-<div class="container">
-    <canvas id="myChart"></canvas>
+
+
+<div>
+    <canvas id="myChart" style="position: relative"></canvas>
 </div>
 
 <script>
@@ -191,17 +204,19 @@
     let myChart = document.getElementById('myChart').getContext('2d');
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Lato';
-    Chart.defaults.global.defaultFontSize = 18;
-    Chart.defaults.global.defaultFontColor = '#777';
+    Chart.defaults.global.defaultFontSize = 29;
+    Chart.defaults.global.defaultFontColor = '#999';
 
     let massPopChart = new Chart(myChart, {
         type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
-            labels:['Starto', 'Amazon', 'Yahoo', 'Hotmail', 'Gmail', 'Fudscam'],
+            labels:['Strato', 'Amazon', 'Yahoo', 'Hotmail', 'Gmail', 'Fudscam'],
             datasets:[{
                 label:'Sellings',
+
+                // fontSize: 40,
                 data:[
-                    50,
+                    30,
                     11,
                     33,
                     23,
@@ -221,14 +236,14 @@
                 borderWidth:1,
                 borderColor:'#777',
                 hoverBorderWidth:3,
-                hoverBorderColor:'#000'
+                hoverBorderColor:'#000',
             }]
         },
         options:{
             title:{
                 display:true,
                 text:'Number Of Sales According To Product',
-                fontSize:25
+                fontSize:40
             },
             legend:{
                 display:true,
@@ -252,9 +267,6 @@
         }
     });
 </script>
-
-
-
 
 </body>
 </html>
